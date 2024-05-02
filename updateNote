@@ -1,0 +1,10 @@
+Override밑에 enum을 정의했다가 Bug발생
+enum은 class에서 정의되어야한다고 한다
+Override 위쪽으로 옮기니까 Debugging되었다
+가독성을 위해 MbtiEnum파일을 따로 만들었다
+
+강사님의 추가 팁
+enum은 class급이기 때문에 바로 정의 가능
+enum.value()를 하면 enum을 list로 갖고옴
+enum.value()를 저장한 변수를 바로 인덱싱하면 value값 인덱싱 가능
+인덱싱한 친구에 get메소드로 field 호출 가능
