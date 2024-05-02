@@ -1,6 +1,3 @@
-//enum은 class에서 정의되어야한다고 한다
-//Override 위쪽으로 옮기니까 Debugging되었다
-//가독성을 위해 MbtiEnum파일을 따로 만들었다
 package com.example.mbti;
 
 import android.content.Intent;
@@ -27,10 +24,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        String mbtiTypes[] = {"ISFJ", "INFJ", "ISFP", "INFP", "ISTJ", "INTJ", "ISTP", "INTP", "ESFJ", "ENFJ", "ESFP", "ENFP", "ESTJ", "ENTJ", "ESTP", "ENTP"};
+        MbtiEnum[] mbtiTypes = MbtiEnum.values();
         for (int i = 0; i < mbtiTypes.length; i++) {
-            String mbtiType = mbtiTypes[i];
-            MbtiEnum.MBTI_ID mbtiEnumId = MbtiEnum.MBTI_ID.valueOf(mbtiType);
+            MbtiEnum mbtiEnumId = mbtiTypes[i];
             Button button = findViewById(mbtiEnumId.getMbtiBtnId());
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
